@@ -5,10 +5,14 @@ module top_tb();
   initial
   forever #10 clock = ~clock;
 
-  in_intf i_intf(clock);
-  out_intf o_intf(clock); 
+  intf i_intf(clock);
 
-  
- //TODO inst the blocks
+  WIFI_TX tx (
+    .clock(clock),
+    .reset(i_intf.dut.reset),
+    .data_in(i_intf.dut.data_in),
+    .data_out(i_intf.dut.data_out)
+  );
   
 endmodule
+
