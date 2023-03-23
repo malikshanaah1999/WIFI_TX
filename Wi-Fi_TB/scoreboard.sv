@@ -12,7 +12,7 @@ endfunction
 
 
 task run();
-  packet pkt_rcv,pkt_exp;
+  Tranaction pkt_rcv,pkt_exp;
   forever
   begin
     rcvr2sb.get(pkt_rcv);

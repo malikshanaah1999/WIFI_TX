@@ -10,20 +10,20 @@ class Driver;
         
         this.num_of_pkt = num_of_pkt;
         this.input_intf_v = v_intf;
-        drv2sb = mbx;
+        this.drv2sb = mbx;
 
     endfunction 
 
     task run();
-        Packet pkt;
+        Tranaction tr;
 
         repeat(num_of_pkt)begin
 
-        pkt = new();
+        tr = new();
 
-        if(pkt.randomize())begin
+        if(tr.randomize())begin
     
-            drv2sb.put(pkt);
+            drv2sb.put(tr);
 
         end
         else begin

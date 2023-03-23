@@ -11,7 +11,7 @@ endfunction
 
 task run();
 
-packet pkt;
+Tranaction pkt;
   forever
   begin
 
